@@ -1,0 +1,28 @@
+services:
+  frontend:
+    build: ./neotalentfrontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./neotalentbackend
+    ports:
+      - "8000:8000"
+    environment:
+      - POCKETBASE_URL=http://pocketbase:8090
+      - POCKETBASE_ADMIN_EMAIL=${REACT_APP_POCKETBASE_EMAIL}
+      - POCKETBASE_ADMIN_PASSWORD=${REACT_APP_POCKETBASE_PASSWORD}
+    depends_on:
+      - pocketbase
+
+  pocketbase:  # ✅ correctly aligned with frontend and backend
+    build:
+      context: ./pocketbase
+      dockerfile: Dockerfile
+    container_name: pocketbase
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./pocketbase/pb_data:/pb/pb_data
