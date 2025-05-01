@@ -1,0 +1,128 @@
+.SummaryHistory {
+    width: 100%;
+  
+    .SummaryContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+    }
+  
+    .SummarySearch {
+      padding: 8px;
+      margin-bottom: 16px;
+      width: 400px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+  
+    .SummaryCard {
+      width: 90%;
+      height: fit-content;
+      padding: 16px;
+      margin-bottom: 12px;
+      border-radius: 10px;
+      overflow: scroll;
+      line-height: 1.4;
+      border: 1px solid;
+      background-color: white;
+      color: #1a1a1a;
+      p {
+        margin-bottom: 8px;
+      }
+  
+      small {
+        color: #555;
+      }
+    }
+  }
+  
+  .App.dark .SummaryCard {
+    border-right: 9px solid;
+    border-bottom: 9px solid;
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #B39CD0;
+  
+    small {
+      color: #aaa;
+    }
+  }
+  
+  .App.light .SummaryCard {
+    border-right: 9px solid;
+    border-bottom: 9px solid;
+    background-color: #f8f8ff;
+    color: #1a1a1a;
+    border-color: #B39CD0;
+  
+    small {
+      color: #555;
+    }
+  }
+  
+  @media screen and (max-width: 1500px) {
+    .SummaryHistory {
+      // styles for large but narrower screens
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .SummaryHistory {
+      // styles for medium-large screens
+    }
+  }
+
+  @media screen and (max-width: 921px) {
+    .MuiTextarea-textarea {
+        font-size: medium !important;
+    }
+  }
+  
+  @media screen and (max-width: 770px) {
+    .SummaryHistory {
+      .SummarySearch {
+        width: 90%;
+      }
+  
+      .SummaryCard {
+        width: 90%;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 615px) {
+    .SummaryHistory {
+      .SummarySearch {
+        font-size: 14px;
+      }
+  
+      .SummaryCard {
+        height: 193px;
+        font-size: 14px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .SummaryHistory {
+      .SummarySearch {
+        width: 100%;
+        font-size: 13px;
+      }
+  
+      .SummaryCard {
+        width: 100%;
+        padding: 12px;
+        font-size: 13px;
+  
+        p {
+          font-size: 13px;
+        }
+  
+        small {
+          font-size: 12px;
+        }
+      }
+    }
+  }

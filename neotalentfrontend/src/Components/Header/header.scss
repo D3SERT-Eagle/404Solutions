@@ -1,0 +1,237 @@
+.App.dark .Header {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #262626;
+    box-shadow: 4px 4px rgba(0,0,0,0.3);
+    border-bottom: 1px solid black;
+    z-index: 999999999999;
+    .HeaderContent {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .Controls {
+            display: flex;
+            gap: 20px;
+        }
+        #CompanyLogo {
+            text-shadow: rgba(255,193,204,0.9) 0px 0px 39px; 
+            font-family: "Bungee Shade", sans-serif;
+            color: #FFC1CC;
+            margin: 0;
+        }
+        #navlink {
+            position: relative;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        #navlink::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #A8DADC;
+            transition: width 0.3s ease-in-out;
+        }
+        
+        #navlink:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+.App.light .Header {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #E2EDFF; // light variation of #8AAAE5
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ccc;
+    z-index: 999999999999;
+
+    .HeaderContent {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .Controls {
+            display: flex;
+            gap: 20px;
+        }
+
+        #CompanyLogo {
+            text-shadow: rgba(138,170,229,0.7) 0px 0px 20px;
+            font-family: "Bungee Shade", sans-serif;
+            color: #8AAAE5;
+            margin: 0;
+        }
+
+        #navlink {
+            position: relative;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        #navlink::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: #8AAAE5;
+            transition: width 0.3s ease-in-out;
+        }
+
+        #navlink:hover::after {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .App {
+      &.dark .Header,
+      &.light .Header {
+        .HeaderContent {
+          // styles for large but narrower screens
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .App {
+      &.dark .Header,
+      &.light .Header {
+        .HeaderContent {
+          // styles for medium-large screens
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 770px) {
+    .App {
+      &.dark .Header,
+      &.light .Header {
+        .HeaderContent {
+          flex-direction: column;
+          gap: 10px;
+  
+          .Controls {
+            justify-content: center;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 615px) {
+    .App {
+      &.dark .Header,
+      &.light .Header {
+        .HeaderContent {
+          #CompanyLogo {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 350px) {
+    .App {
+      &.dark .Header,
+      &.light .Header {
+        .HeaderContent {
+          flex-direction: column;
+          align-items: center;
+  
+          #CompanyLogo {
+            font-size: 18px;
+            text-align: center;
+          }
+  
+          .Controls {
+            flex-direction: column;
+            gap: 8px;
+          }
+        }
+      }
+    }
+  }
+
+
+  .SimpleModal {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .SimpleModalContent {
+    background: #fff;
+    padding: 30px;
+    max-width: 400px;
+    border-radius: 12px;
+    text-align: start;
+    box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  .SimpleModalContent h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .SimpleModalContent p {
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .SimpleModalContent button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #B39CD0;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .SimpleModalContent button:hover {
+    background: #9A84B8;
+    transform: translateY(-1px);
+  }
+  
+  .SimpleModalContent button:active {
+    transform: scale(0.98);
+  }
+  
+  .SimpleModalContent button:hover {
+    background: #9A84B8;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }

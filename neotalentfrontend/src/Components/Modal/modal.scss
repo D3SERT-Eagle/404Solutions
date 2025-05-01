@@ -1,0 +1,29 @@
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 9999999 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .LoginRegisterContainer {
+        border: 4px solid #1a1a1a;
+        width: 400px;
+        border-radius: 8px;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background: #E4E4E4;
+        #Register {
+            margin: 0;
+            padding: 0;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}

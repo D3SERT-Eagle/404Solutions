@@ -1,0 +1,605 @@
+
+.App {
+    position: relative;
+    background-color: #1a1a1a;
+    overflow: scroll;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('./Assets/city.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top;
+      opacity: 0.3;
+      z-index: 0;
+  
+      // 🔥 Mask to fade out toward the bottom
+      mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    }
+  
+    .ToggleModes {
+      position: absolute;
+      z-index: 999;
+  
+      img {
+        width: 50px;
+      }
+    }
+  }
+  
+//Light Mode
+.App.light {
+    .ToggleModes {
+        position: fixed;
+        z-index: 999;
+        background: #1a1a1a;
+        border-radius: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        img {
+            width: 30px;
+            height: 26px;
+        }
+    }
+    background-color: #ffffff;
+
+    .AppContent {
+        padding: 20px;
+        box-sizing: border-box;
+        color: #1a1a1a;
+        width: 100%;
+
+        .Mission {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .StyledText {
+                position: relative;
+            }
+
+            h1 {
+                position: relative;
+                z-index: 99;
+                width: fit-content;
+                margin: 0;
+                font-weight: 500;
+                color: #1a1a1a;
+            }
+
+            .Underline {
+                position: absolute;
+                bottom: 6px;
+                left: 15px;
+                width: 100%;
+                height: 6px;
+                background-color: #B39CD0;
+            }
+        }
+
+        .MissionStatement {
+            text-align: justify;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            #MissionText {
+                width: 600px;
+                color: #1a1a1a;
+            }
+        }
+
+        .DemoAISolutions {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .Summary {
+                padding: 10px;
+                box-sizing: border-box;
+                width: 30%;
+                border: 4px solid #B39CD0;
+                height: 600px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                background-color: #f9f5ff;
+
+                #Description {
+                    position: absolute;
+                    font-size: 1.1rem;
+                    bottom: -40px;
+                    color: #1a1a1a;
+                }
+
+                .CenteredDiv {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .AIResponse {
+                    line-height: 1.5;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: #fff;
+                    border: #B39CD0 4px solid;
+                    color: #1a1a1a;
+                    overflow-y: scroll;
+                }
+
+                #SummaryButton {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background: #B39CD0;
+                    border: none;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 120px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                #SummaryButton:hover {
+                    background-color: #9A84B8;
+                }
+            }
+
+            .Nutrition {
+                padding: 10px;
+                box-sizing: border-box;
+                position: relative;
+                width: 30%;
+                border: 4px solid #A8DADC;
+                height: 600px;
+                border-radius: 10px;
+                justify-content: space-between;
+                display: flex;
+                flex-direction: column;
+                background-color: #e8f9fa;
+
+                #Description {
+                    position: absolute;
+                    font-size: 1.1rem;
+                    bottom: -40px;
+                    color: #1a1a1a;
+                }
+
+                #NutritionButton {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background: #A8DADC;
+                    border: none;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 120px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                #NutritionButton:hover {
+                    background: #8FC2C5;
+                }
+
+                .CenteredDiv {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                .AIResponse {
+                    line-height: 1.5;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: #fff;
+                    border: #A8DADC 4px solid;
+                    color: #1a1a1a;
+                    overflow-y: scroll;
+                }
+            }
+
+            .Translator {
+                padding: 10px;
+                box-sizing: border-box;
+                position: relative;
+                width: 30%;
+                border: 4px solid #FFC1CC;
+                height: 600px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                background-color: #fff1f3;
+
+                .CenteredDiv {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                #TranslateButton {
+                    margin-bottom: 10px;
+                    background: #FFC1CC;
+                    border: none;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 120px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                #TranslateButton:hover {
+                    background-color: #f8aab5;
+                }
+
+                #Description {
+                    position: absolute;
+                    font-size: 1.1rem;
+                    bottom: -40px;
+                    color: #1a1a1a;
+                }
+
+                .AIResponse {
+                    line-height: 1.5;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: #fff;
+                    border: #FFC1CC 4px solid;
+                    color: #1a1a1a;
+                    overflow-y: scroll;
+                }
+
+                #Source,
+                #Target {
+                    height: 30px;
+                    border: 1px solid #ccc;
+                    border-radius: 10px;
+                    background-color: #f8f8f8;
+                    color: #1a1a1a;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+//Dark Mode
+.App.dark {
+    background-color: #1a1a1a;
+    .ToggleModes {
+        position: fixed;
+        z-index: 999;
+        background: #fff;
+        border-radius: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+        img {
+            width: 30px;
+            height: 27px;
+        }
+    }
+    .AppContent {
+        padding: 20px;
+        box-sizing: border-box;
+        color: white;
+        width: 100%;
+        .Mission {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            .StyledText {
+                position: relative;
+            }
+            h1 {
+                position: relative;
+                z-index: 99;
+                width: fit-content;
+                margin: 0;
+                font-weight: 500;
+            }
+            .Underline {
+                position: absolute;
+                bottom: 6px;
+                left: 15px;
+                width: 100%;
+                height: 6px;
+                background-color: #B39CD0;
+            }
+        }
+        .MissionStatement {
+            text-align: justify;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            #MissionText {
+                width: 600px;
+            }
+        }
+        .DemoAISolutions {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .Summary {
+                padding: 10px;
+                box-sizing: border-box;
+                width: 30%;
+                border: 4px solid #B39CD0;
+                height: 600px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                #Description {
+                    position: absolute;
+                    font-size: 1.1rem;
+                    bottom: -40px;
+                }
+                .CenteredDiv {
+                    display: flex;
+                    justify-content: center;
+                }
+                .AIResponse {
+                    line-height: 1.5;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: #262626;
+                    border: #B39CD0 4px solid;
+                    overflow-y: scroll;
+                }
+                #SummaryButton {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background: #B39CD0;
+                    border: none;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 120px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: white;
+                }
+                #SummaryButton:hover {
+                    background-color: #9A84B8;
+                }
+            }
+            .Nutrition {
+                padding: 10px;
+                box-sizing: border-box;
+                position: relative;
+                width: 30%;
+                border: 4px solid #A8DADC;
+                height: 600px;
+                border-radius: 10px;
+                justify-content: space-between;
+                display: flex;
+                flex-direction: column;
+                #Description {
+                    position: absolute;
+                    font-size: 1.1rem;
+                    bottom: -40px;
+                }
+                #NutritionButton {
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    background: #A8DADC;
+                    border: none;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 120px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: white;
+                }
+                #NutritionButton:hover {
+                    background: #8FC2C5;
+                }
+                .CenteredDiv {
+                    display: flex;
+                    justify-content: center;
+                }
+                .AIResponse {
+                    line-height: 1.5;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: #262626;
+                    border: #A8DADC 4px solid;
+                    overflow-y: scroll;
+                }
+            }
+            .Translator {
+                padding: 10px;
+                box-sizing: border-box;
+                position: relative;
+                width: 30%;
+                border: 4px solid #FFC1CC;
+                height: 600px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .CenteredDiv {
+                    display: flex;
+                    justify-content: center;
+                }
+                #TranslateButton {
+                    //margin-top: 10px;
+                    margin-bottom: 10px;
+                    background: #ffc1cc;
+                    border: none;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 120px;
+                    font-family: "Montserrat", sans-serif;
+                    font-weight: 600;
+                    cursor: pointer;
+                    color: white;
+                }
+                #Description {
+                    position: absolute;
+                    font-size: 1.1rem;
+                    bottom: -40px;
+                }
+                .AIResponse {
+                    line-height: 1.5;
+                    padding: 5px;
+                    box-sizing: border-box;
+                    width: 100%;
+                    border-radius: 10px;
+                    background-color: #262626;
+                    border: #ffc1cc 4px solid;
+                    overflow-y: scroll;
+                }
+                #Source {
+                    height: 30px;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    background-color: #262626;
+                    color: white;
+                    font-weight: 500;
+                }
+                #Target {
+                    height: 30px;
+                    border: 1px solid white;
+                    border-radius: 10px;
+                    background-color: #262626;
+                    color: white;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+  .App {
+    &.dark, &.light {
+      .AppContent {
+        .DemoAISolutions {
+          .Summary {
+            // responsive styles here
+          }
+          .Nutrition {
+            // responsive styles here
+          }
+          .Translator {
+            // responsive styles here
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+    .App {
+        &.dark, &.light {
+            font-size: small;
+          .AppContent {
+            .DemoAISolutions {
+                margin-top: 50px;
+              flex-direction: column;
+              align-items: center;
+              gap: 50px;
+              .Summary, .Nutrition, .Translator {
+                width: 50%; // optional responsive default
+                height: 600px;
+                margin-bottom: 20px; // optional spacing
+              }
+            }
+          }
+        }
+      }
+}
+
+@media screen and (max-width: 770px) {
+  .App {
+    &.dark, &.light {
+        font-size: small;
+      .AppContent {
+        .DemoAISolutions {
+            margin-top: 50px;
+          flex-direction: column;
+          align-items: center;
+          gap: 50px;
+          .Summary, .Nutrition, .Translator {
+            width: 100%; // optional responsive default
+            height: 500px;
+            margin-bottom: 20px; // optional spacing
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .App {
+    &.dark, &.light {
+      .AppContent {
+        .DemoAISolutions {
+          .Summary {
+            // responsive styles here
+            width: 100%;
+          }
+          .Nutrition {
+            // responsive styles here
+            width: 100%;
+          }
+          .Translator {
+            // responsive styles here
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .App {
+    &.dark, &.light {
+      .AppContent {
+        .DemoAISolutions {
+          .Summary {
+            // responsive styles here
+            width: 100%;
+          }
+          .Nutrition {
+            // responsive styles here
+            width: 100%;
+          }
+          .Translator {
+            // responsive styles here
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
